@@ -1,0 +1,242 @@
+:root {
+  --accent-primary: #38bdf8;
+  --accent-secondary: #22c55e;
+  --accent-warning: #facc15;
+  --accent-danger: #ef4444;
+  --background-primary: #0f172af6;
+  --background-secondary: #111827;
+  --background-tertiary: #1f2933;
+  --highlight: rgb(23, 182, 250);
+  --hover: #a4bfe7;
+  --outline: #243244;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+}
+
+@font-face {
+  font-family: Audiowide-regular;
+  src: url(../fonts/Audiowide-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(#080d16f6,#0b111ff6, #111b31f6);
+  color: #e5e7eb;
+  font-family: Audiowide-regular;
+  height: 100%;
+  margin: 0;
+}
+
+.header {
+  background-color: var(--background-secondary);
+  border-bottom: var(--outline) solid 1px;
+  color: var(--text-primary);
+  display: flex;
+  font-size: 1.5rem;
+  grid-area: header;
+  justify-content: center;
+  padding: 12px;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__wrapper {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 10fr;
+  grid-template-areas: "header header"
+                        "main main"
+                        "footer footer";
+}
+
+.carousel-container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel {
+  align-items: center;
+  display: flex;
+  height: 400px;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.carousel-item {
+  background-size: contain;
+  border-radius: 15px;  
+  height: 200px;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width: 330px;
+  z-index: 0;
+}
+
+.item-1 {
+  left: 15%;
+  opacity: 0.4;
+  transform: translateX(-50%);
+}
+
+.item-2, .item-4 {
+  height: 250px;
+  opacity: 0.8;
+  width: 380px;
+  z-index: 1;
+}
+
+.item-2 {
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.item-3 {
+  box-shadow: -2px 5px 33px 6px rgba(0,0,0,0.35);
+  height: 300px;
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 430px;
+  z-index: 2;
+}
+
+.item-4 {
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.item-5 {
+  left: 85%;
+  opacity: .4;
+  transform: translateX(-50%);
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  height: 100px;
+}
+
+.carousel-buttons button {
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.carousel-button-left {
+  position: relative;
+} 
+
+.carousel-button-left::before {
+  height: 5px;
+  left: -30px;
+  padding: 10px;
+  position: absolute;
+  transform: rotate(135deg) translateY(-50%);
+}
+
+.carousel-button-right {
+  position: relative;
+} 
+
+.carousel-button-right::before {
+  height: 5px;
+  padding: 10px;
+  position: absolute;
+  right: -30px;
+  transform: rotate(-45deg) translateY(-50%);
+  transition: right 0-15s ease-in-out;
+}
+/*  */
+.project__overlay {
+  align-items: center;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  opacity: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.project__overlay.display {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay {
+  background-image: linear-gradient(#080d16f6,#0b111ff6, #111b31f6);
+  border-radius: 10px;
+  color: var(--text-primary);
+  max-width: 60%;
+  padding: 2rem;
+  position: relative;
+}
+
+.project-name {
+  text-align: center;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+/*  */
+.main-content {
+  display: flex;
+  grid-area: main;
+  margin: auto;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin-top: 400px;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+}
+
+/* .footer {
+  background-color: var(--background-secondary);
+  border-top: var(--outline) solid 1px;
+  color: var(--text-primary);
+  display: flex;
+  font: 1rem;
+  grid-area: footer;
+  height: 48px;
+  justify-content: center;
+} */
+
