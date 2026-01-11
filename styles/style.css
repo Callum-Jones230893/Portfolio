@@ -196,6 +196,20 @@ body {
   text-align: center;
 }
 
+.project-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.criteria-toggle {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.hide {
+ display: none;
+}
+
 .close {
   background: none;
   border: none;

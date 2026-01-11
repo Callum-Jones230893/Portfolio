@@ -16,6 +16,8 @@ const carouselItemContainer = document.querySelector(`.carousel`)
 const carouselBtnContainer = document.querySelector(`.carousel-buttons`);
 const carouselButtons = [`left`, `right`];
 const carouselItems = document.querySelectorAll(`.carousel-item`);
+const criteriaToggleBtn = document.querySelector(".criteria-toggle");
+const criteriaSection = document.querySelector(".criteria");
 
 class Carousel {
 
@@ -72,7 +74,7 @@ class Carousel {
   }
 };
 
-function Project(index, title, imgSrc, bio, challenges, learning, improvements, grading, techniques) {
+function Project(index, title, imgSrc, bio, challenges, learning, improvements, criteriaBtn, criteria, techniques, gitLink, vercel) {
   this.index = index,
   this.title = title,
   this.imgSrc = imgSrc,
@@ -80,8 +82,11 @@ function Project(index, title, imgSrc, bio, challenges, learning, improvements, 
   this.challenges = challenges,
   this.learning = learning,
   this.improvements = improvements,
-  this.grading = grading,
-  this.techniques = techniques
+  this.criteriaBtn = criteriaBtn
+  this.criteria = criteria,
+  this.techniques = techniques,
+  this.gitLink = gitLink,
+  this.vercel = vercel
 }
 
 const projects = [
@@ -93,8 +98,11 @@ const projects = [
     "One of the main challenges was implementing a grid-based layout with limited prior experience. I overcame this by researching CSS Grid techniques and experimenting with different approaches until achieving a clean, responsive result.",
     "Skills developed/improved:",
     ["Layout of webpages", "Navigational menus"],
-    "grading",
-    "technique"
+    "Criteria",
+    ["grading"],
+    "technique",
+    "",
+    ""
   ),
   new Project(
     2,
@@ -104,8 +112,11 @@ const projects = [
     "",
     "Skills developed/improved:",
     ["improvements"],
-    "grading",
-    "technique"
+    "Criteria",
+    ["grading"],
+    "technique",
+    "https://github.com/Callum-Jones230893/First-Game-2025",
+    ""
   ),
   new Project(
     3, 
@@ -115,8 +126,11 @@ const projects = [
     "A key challenge was collaborating effectively within a team using SCRUM and GitHub. Learning to communicate clearly, compromise on implementation decisions, and adapt to team workflows helped streamline development and improve the final outcome.",
     "Skills developed/improved:",
     ["Agile Methodology", "SCRUM", "GitHub"],
-    "grading",
-    "technique"
+    "Criteria",
+    ["Multi-page website built with HTML, CSS, and JavaScript​", "Dynamic content rendering based on user interaction​", "Structured data handling for multiple entities (animals & team members)", "Single active state logic for sidebar interactions", "Conditional rendering of summaries and detailed views", "Fully responsive layout with shared page structure" ],
+    "technique",
+    "https://github.com/Callum-Jones230893/Group-zoo-assignment",
+    "https://group-zoo-assignment-frucqach2-callum-jones-projects.vercel.app/"
   ),
   new Project(
     4, 
@@ -126,8 +140,11 @@ const projects = [
     "The main challenges involved creating a dynamic grid layout and implementing character movement using DOM manipulation. Through research, testing, and iteration, I was able to reach a functional solution while identifying areas for future improvement.",
     "Skills developed/improved:",
     ["DOM manipulation", "Precise searching for solutions", "Psuedo coding"],
-    "grading",
-    "technique"
+    "Criteria",
+    ["Event-driven JavaScript game logic", "Dynamic DOM manipulation and state management", "Responsive UI with real-time feedback", "Session-based data tracking", "Deployed via GitHub Pages / Vercel"],
+    "technique",
+    "https://github.com/Callum-Jones230893/Visualized-game-2025-Nov",
+    "https://visualized-game-2025-mrgwqqt5z-callum-jones-projects.vercel.app/"
   ),
   new Project(
     5, 
@@ -136,9 +153,12 @@ const projects = [
     "This assignment was to make a web page in small groups, connecting to an API and demonstrating the ability to fetch specific data from the API that we selected.",
     "A key challenge was researching and implementing API data fetching with limited prior experience, while coordinating effectively within a new team. By collaborating on planning and responsibilities, we were able to fetch, manage, and display the required data successfully.",
     "Skills developed/improved:",
-    ["Fetching"],
-    "grading",
-    "technique"
+    ["Fetching data from APIs"],
+    "Criteria",
+    ["API integration using fetch() triggered by user interaction", "JSON data handling and dynamic DOM rendering", "Display of multiple data properties per request", "Clean, maintainable code structure", "Version control with meaningful GitHub commits", "Robust error handling for failed or invalid API requests", "Multiple API requests per user flow", "localStorage for persisting user data or preferences"],
+    "technique",
+    "https://github.com/Callum-Jones230893/API-group-assignment",
+    "https://api-group-assignment-qd6cla0w0-callum-jones-projects.vercel.app/"
   ),
 ];
 
@@ -178,12 +198,39 @@ document.querySelector(`.carousel`).addEventListener(`click`, (e) => {
   overlay.querySelector(`.project-bio`).textContent = project.bio;
   overlay.querySelector(`.project-challenges`).textContent = project.challenges;
   overlay.querySelector(`.project-learning`).textContent = project.learning;
-  overlay.querySelector(`.grading`).textContent = project.grading;
+  overlay.querySelector(`.criteria-toggle`).textContent = project.criteriaBtn
+  overlay.querySelector(`.criteria`).textContent = project.grading;
   overlay.querySelector(`.techniques`).textContent = project.techniques;
+  overlay.querySelector(`.git-repo`).textContent = project.gitLink;
+  overlay.querySelector(`.production-page`).textContent = project.vercel;
 
+  function populateCriteria() {
+    const criteria = document.querySelector(".criteria");
+    criteria.innerHTML = "";
+
+    const criteriaList = document.createElement("ul");
+    criteriaList.classList.add("criteria-list");
+
+    project.criteria.forEach(i => {
+      const projectCriteria = document.createElement("li");
+      projectCriteria.textContent = i;
+      projectCriteria.classList.add("project-criteria");
+      criteriaList.appendChild(projectCriteria);
+    });
+
+    criteria.appendChild(criteriaList);
+  }
+
+  const criteria = overlay.querySelector(".criteria");
+  criteria.classList.add("hide");
   overlay.classList.remove(`hide`);
   overlay.classList.add(`display`);
+  populateCriteria();
   keyImprovements();
+});
+
+criteriaToggleBtn.addEventListener("click", () => {
+  criteriaSection.classList.toggle("hide");
 });
 
 document.querySelector(`.project__overlay`).addEventListener(`click`, (e) => {
