@@ -42,6 +42,15 @@ body {
   padding: 12px;
 }
 
+h2,
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
 .main {
   grid-area: main;
   display: flex;
@@ -201,7 +210,12 @@ body {
   flex-direction: row;
 }
 
+.project-learning {
+  font-size: 1.5rem;
+}
+
 .criteria-toggle {
+  font-size: 1.5rem;
   cursor: pointer;
   text-decoration: underline;
 }
