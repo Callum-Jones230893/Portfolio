@@ -241,11 +241,33 @@ p {
   margin: auto;
 }
 
+.body__title {
+  text-align: center;
+}
+
+.photo__wrapper {
+  text-align: center;
+}
+
+.body__subtitle {
+  margin-bottom: 10%;
+  text-align: center;
+}
+
 .main-body {
   display: flex;
   flex-direction: column;
   max-width: 1280px;
-  margin-top: 400px;
+  margin-top: 45%;
+}
+
+.contact {
+  margin-top: 5%;
+}
+
+.contact p,
+.contact h3 {
+  font-size: 1rem;
 }
 
 .hidden {
