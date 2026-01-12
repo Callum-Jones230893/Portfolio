@@ -215,6 +215,7 @@ p {
 }
 
 .criteria-toggle {
+  color: var(--text-tertiary);
   font-size: 1.5rem;
   cursor: pointer;
   text-decoration: underline;
@@ -263,6 +264,7 @@ p {
 
 .contact {
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .contact p,
