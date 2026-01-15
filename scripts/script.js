@@ -296,9 +296,9 @@ const populateRepos = async () => {
 };
 
 const repoToggle = document.querySelector(".repo-toggle");
-console.log(repoToggle)
+
 repoToggle.addEventListener("click", () => {
-  showRepos.classList.toggle("hide");
+  showRepos.classList.toggle("hidden");
 });
 
 const carousel = new Carousel(carouselBtnContainer, carouselItems, carouselButtons);

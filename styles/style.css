@@ -304,6 +304,12 @@ p {
   margin: auto;
 }
 
+.hidden {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
 .body__title {
   text-align: center;
 }
@@ -321,7 +327,7 @@ p {
   display: flex;
   flex-direction: column;
   max-width: 1280px;
-  margin-top: 45%;
+  margin-top: 35%;
 }
 
 .photo__wrapper img {
@@ -340,10 +346,24 @@ p {
   transition-delay: 0.4s;
 }
 
+.repo-toggle {
+ cursor: pointer;
+ width: 20%;
+}
+
 .contact, 
 .all_repos {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.repo-list {
+  max-height: 0;
+  transition: none;
+}
+
+.repo-list:not(.hidden) {
+  max-height: 500px;
 }
 
 .contact p,
@@ -352,10 +372,9 @@ p {
   font-size: 1rem;
 }
 
-.hidden {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+.email {
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
 .show {
@@ -372,6 +391,13 @@ img {
     0 0 6px rgba(80, 200, 255, 0.3),
     0 0 12px rgba(120, 90, 255, 0.2);
   transition: all 0.3s ease-in-out;
+}
+
+.footer {
+  grid-area: footer;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  text-align: center;
 }
 
 @media (max-width: 599px) {
