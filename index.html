@@ -7,6 +7,7 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="./styles/style.css">
   <script src="./scripts/script.js" defer></script>
+  <script src="https://kit.fontawesome.com/9590e12a3d.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="main__wrapper">
@@ -16,11 +17,11 @@
     <div class="main">
       <div class="carousel-container">
         <div class="carousel">
-          <img class="carousel-item item-1" src="./images/user-img-small.png" alt="Responsive website" data-index="1">
-          <img class="carousel-item item-2" src="./images/user-img-small - Copy (2).png" alt="Javascript web based game" data-index="2">
-          <img class="carousel-item item-3" src="./images/user-img-small - Copy (3).png" alt="Australia zoo group project" data-index="3">
-          <img class="carousel-item item-4" src="./images/user-img-small - Copy (4).png" alt="Responsive visualized javascript game" data-index="4">
-          <img class="carousel-item item-5" src="./images/istockphoto-1147544807-1024x1024.webp" alt="Group website fetching databases and API's" data-index="5">
+          <img class="carousel-item item-1" src="./images/user-img-small.png" alt="Responsive website" data-index="1" width="300" height="430">
+          <img class="carousel-item item-2" src="./images/user-img-small - Copy (2).png" alt="Javascript web based game" data-index="2" width="300" height="430">
+          <img class="carousel-item item-3" src="./images/zoo_assignment.png" alt="Australia zoo group project" data-index="3" width="300" height="430">
+          <img class="carousel-item item-4" src="./images/visualized_game_preview.png" alt="Responsive visualized javascript game" data-index="4" width="300" height="430">
+          <img class="carousel-item item-5" src="./images/API_group_assignment.png" alt="Group website fetching databases and API's" data-index="5" width="300" height="430">
         </div>
       </div>  
     <div class="carousel-buttons"></div>
@@ -46,20 +47,25 @@
       <div class="main-body">
         <h2 class="body__title hidden">Callum Jones</h2>
           <div class="photo__wrapper hidden">
-            <img src="" alt="Photo of Callum Jones">
+            <img src="./images/self-image.jpg" alt="Photo of Callum Jones" width="317" height="320">
           </div>
         <h3 class="body__subtitle hidden">Front End Fullstack student at Futuregames</h3>
         <div class="about hidden">
-          <!--   -->
-          <p>I pride myself on being a positive, team-oriented professional who is approachable and eager to both learn and share knowledge where possible.
-            Through roles across several industries, I’ve developed a strong, adaptable skill set, along with clear communication and strong interpersonal skills that help me collaborate effectively with both technical and non-technical teams.
-          </p>
+          <p class="about-text">I pride myself on being a positive, team-oriented professional who is approachable and eager to both learn and share knowledge where possible.</p>
+          <p class="about-text">Through roles across several industries, I’ve developed a strong, adaptable skill set, along with clear communication and strong interpersonal skills that help me collaborate effectively with both technical and non-technical teams.</p>
         </div>
-        <article class="contact hidden">
-          <h3>Contact me here :</h3>
-          <p>email : call_jones2@hotmail.com</p>
-          <p>phone : +46 760 096 152</p>
-        </article>
+        <div class="information">
+          <article class="contact hidden">
+            <h3>Contact me here :</h3>
+            <a href="mailto:call_jones2@hotmail.com" class="email_link">call_jones2@hotmail.com</a>
+            <p>phone : +46 760 096 152</p>
+            <a href="https://github.com/Callum-Jones230893"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/callum-jones-760b4720b/"><i class="fa-brands fa-linkedin"></i></a>
+          </article>
+          <article class="git_repos hidden">
+            <h3 class="repo-toggle">My projects :</h3>
+            <div class="repos"></div>
+          </article>
       </div>
     </div>
   <!-- <footer class="footer">Copyright</footer> -->
