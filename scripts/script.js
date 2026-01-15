@@ -306,3 +306,9 @@ const carousel = new Carousel(carouselBtnContainer, carouselItems, carouselButto
 populateRepos();
 carousel.controlClick();
 carousel.updateCarousel();
+
+// animation api
+// favicon
+// add multiple breakpoints
+// icons for coding languages
+// add substring and links to api display
