@@ -19,16 +19,14 @@ hidden.forEach((el) => showContent.observe(el));
 const carouselContainer = document.querySelector(`.carousel-container`);
 const carouselItemContainer = document.querySelector(`.carousel`);
 const carouselBtnContainer = document.querySelector(`.carousel-buttons`);
-const carouselButtons = [`left`, `right`];
 const carouselItems = document.querySelectorAll(`.carousel-item`);
 const criteriaToggleBtn = document.querySelector(".criteria-toggle");
 const criteriaSection = document.querySelector(".criteria");
 
 class Carousel {
-  constructor(container, item, buttons) {
+  constructor(container, item) {
     this.container = container;
     this.item = Array.from(item);
-    this.buttonArray = buttons;
   }
 
   updateCarousel() {
@@ -48,16 +46,6 @@ class Carousel {
       this.item.push(this.item.shift());
     }
     this.updateCarousel();
-  }
-
-  controlClick() {
-    const click = Array.from(carouselBtnContainer.childNodes);
-    click.forEach(button => {
-      button.addEventListener(`click`, e => {
-        e.preventDefault();
-        this.buttonPosition(button);
-      });
-    });
   }
 }
 
@@ -314,10 +302,9 @@ repoToggle.addEventListener("click", () => {
   showRepos.classList.toggle("hidden");
 });
 
-const carousel = new Carousel(carouselBtnContainer, carouselItems, carouselButtons);
+const carousel = new Carousel(carouselBtnContainer, carouselItems);
 
 populateRepos();
-carousel.controlClick();
 carousel.updateCarousel();
 
 // animation api
