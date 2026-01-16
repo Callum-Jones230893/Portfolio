@@ -292,6 +292,8 @@ const populateRepos = async () => {
 
   if (!repoUrls) return;
 
+  showRepos.innerHTML = "";
+
   if (showRepos.classList.contains("hidden")) {
     showRepos.classList.remove("hidden");
   } else {
@@ -303,7 +305,7 @@ const populateRepos = async () => {
     let repo = document.createElement("div");
     repo.classList.add("repo-div")
     repo.innerHTML = `<a href="${url}" target="_blank">${repoName}</a>`;
-    showRepos.appendChild(repo)
+    showRepos.appendChild(repo);
   })
 };
 
