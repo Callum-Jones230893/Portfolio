@@ -16,16 +16,13 @@ const showContent = new IntersectionObserver((entries) => {
 const hidden = document.querySelectorAll(`.hidden`);
 hidden.forEach((el) => showContent.observe(el));
 
-const carouselContainer = document.querySelector(`.carousel-container`);
 const carouselItemContainer = document.querySelector(`.carousel`);
-const carouselBtnContainer = document.querySelector(`.carousel-buttons`);
 const carouselItems = document.querySelectorAll(`.carousel-item`);
 const criteriaToggleBtn = document.querySelector(".criteria-toggle");
 const criteriaSection = document.querySelector(".criteria");
 
 class Carousel {
-  constructor(container, item) {
-    this.container = container;
+  constructor(item) {
     this.item = Array.from(item);
   }
 
@@ -265,7 +262,7 @@ const gitApi = async () => {
     return repoUrls;
 
   } catch (error) {
-    result.innerHTML = `<div>${error.message}</div>`;
+    repoSection.innerHTML = `<div>${error.message}</div>`;
   }
 };
 
@@ -302,7 +299,7 @@ repoToggle.addEventListener("click", () => {
   showRepos.classList.toggle("hidden");
 });
 
-const carousel = new Carousel(carouselBtnContainer, carouselItems);
+const carousel = new Carousel(carouselItems);
 
 populateRepos();
 carousel.updateCarousel();
