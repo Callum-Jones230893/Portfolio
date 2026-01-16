@@ -346,9 +346,29 @@ p {
   transition-delay: 0.4s;
 }
 
-.repo-toggle {
- cursor: pointer;
- width: 20%;
+.git_repos h3 {
+  cursor: pointer;
+  position: relative;
+  width: 80%;
+}
+
+.git_repos h3:hover {
+  text-shadow: 0 0 8px #38bdf8, 0 0 12px #a34ed9;
+}
+
+.git_repos h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: var(--accent-primary);
+  transition: width 0.3s ease;
+}
+
+.git_repos h3:hover::after {
+  width: 80%;
 }
 
 .contact, 
@@ -358,11 +378,15 @@ p {
 }
 
 .repo-list {
+  transition: none;
+}
+
+.repo-div {
   max-height: 0;
   transition: none;
 }
 
-.repo-list:not(.hidden) {
+.repo-div:not(.hidden) {
   max-height: 500px;
 }
 

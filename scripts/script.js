@@ -273,7 +273,7 @@ const gitApi = async () => {
     const repoUrls = [];
 
     for (let i = 0; i < data.length; i++) {
-      repoUrls.push(data[i].url);
+      repoUrls.push(data[i].html_url);
     }
     return repoUrls;
 
@@ -292,7 +292,19 @@ const populateRepos = async () => {
 
   if (!repoUrls) return;
 
-  showRepos.innerHTML = repoUrls.join("<br>");
+  if (showRepos.classList.contains("hidden")) {
+    showRepos.classList.remove("hidden");
+  } else {
+    showRepos.classList.add("hidden");
+  }
+  
+  repoUrls.forEach(url => {
+    let repoName = url.split(`/`).pop();
+    let repo = document.createElement("div");
+    repo.classList.add("repo-div")
+    repo.innerHTML = `<a href="${url}" target="_blank">${repoName}</a>`;
+    showRepos.appendChild(repo)
+  })
 };
 
 const repoToggle = document.querySelector(".repo-toggle");
@@ -311,4 +323,3 @@ carousel.updateCarousel();
 // favicon
 // add multiple breakpoints
 // icons for coding languages
-// add substring and links to api display
