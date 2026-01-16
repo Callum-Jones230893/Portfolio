@@ -116,7 +116,6 @@ p {
 }
 
 .item-3 {
-  box-shadow: -2px 5px 33px 6px rgba(0,0,0,0.35);
   height: 300px;
   opacity: 1;
   left: 50%;
@@ -231,7 +230,7 @@ p {
 }
 
 .criteria:not(.hide) {
-  max-height: 5000px;
+  max-height: 500px;
 }
 
 .close {
@@ -333,7 +332,7 @@ p {
 }
 
 .repo-list:not(.hidden) {
-  max-height: 5000px;
+  max-height: 500px;
   opacity: 1;
   transform: translateX(0);
   transition: max-height 0.4s ease, opacity 0.4s ease;
