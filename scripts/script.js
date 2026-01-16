@@ -61,8 +61,7 @@ class Carousel {
   }
 }
 
-function Project(index, title, imgSrc, bio, challenges, learning, improvements, criteriaBtn, criteria, techniques, gitLink, vercel
-) {
+function Project(index, title, imgSrc, bio, challenges, learning, improvements, criteriaBtn, criteria, techniques, gitLink, vercel) {
   this.index = index;
   this.title = title;
   this.imgSrc = imgSrc;
