@@ -188,7 +188,7 @@ carouselItemContainer.addEventListener("click", (e) => {
     carousel.updateCarousel();
 
     setTimeout(() => (isMoving = false), CLICK_INTERVAL);
-    return;    
+    return;
   }
 
   if (!clicked.classList.contains("item-3")) return;

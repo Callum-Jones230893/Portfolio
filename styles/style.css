@@ -68,6 +68,8 @@ p {
                         "footer footer";
 }
 
+/* Carousel CSS */
+
 .carousel-container {
   display: flex;
   justify-content: center;
@@ -134,6 +136,8 @@ p {
   opacity: .4;
   transform: translateX(-50%);
 }
+
+/* Overlay CSS */
 
 .project__overlay {
   align-items: flex-start;
@@ -244,6 +248,8 @@ p {
   right: 20px;
 }
 
+/* Main content CSS */
+
 .main-content {
   display: flex;
   grid-area: main;
@@ -292,6 +298,8 @@ p {
   transition-delay: 0.4s;
 }
 
+/* Git API section */
+
 .git_repos h3 {
   cursor: pointer;
   position: relative;
@@ -338,6 +346,8 @@ p {
   transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
+/* Contact Section */
+
 .contact p,
 .all_repos div {
   font-size: 1rem;
@@ -357,6 +367,8 @@ p {
   transform: translateX(0);
 }
 
+/* IMG section */
+
 .carousel-item,
 .overlay img,
 img {
@@ -367,6 +379,8 @@ img {
     0 0 12px rgba(120, 90, 255, 0.2);
   transition: all 0.3s ease-in-out;
 }
+
+/* Footer */
 
 .footer {
   grid-area: footer;
