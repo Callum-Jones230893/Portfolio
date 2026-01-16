@@ -1,6 +1,6 @@
 :root {
   --accent-primary: #38bdf8;
-  --background-secondary: #111827;
+  --background-primary: #111827;
   --outline: #243244;
   --text-primary: #e5e7eb;
   --text-secondary: #9ca3af;
@@ -25,7 +25,7 @@ body {
 }
 
 .header {
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
   border-bottom: 1px solid var(--outline);
   color: var(--text-primary);
   display: flex;
