@@ -305,5 +305,3 @@ populateRepos();
 carousel.updateCarousel();
 
 // animation api 
-// add multiple breakpoints
-// icons for coding languages
