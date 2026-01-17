@@ -65,30 +65,30 @@ const projects = [
   new Project(
     1,
     "Responsive Website",
-    "img1.png",
+    "./images/first-webpage.png",
     "This assignment was to make a responsive website using HTML and CSS, testing our skills that we had learnt up until that point.",
     "One of the main challenges was implementing a grid-based layout with limited prior experience. I overcame this by researching CSS Grid techniques and experimenting with different approaches until achieving a clean, responsive result.",
     "Skills developed/improved:",
     ["Layout of webpages", "Navigational menus"],
     "Criteria",
     ["grading"],
-    "technique",
-    "",
-    ""
+    `<i class="fa-brands fa-css"></i></i><i class="fa-brands fa-html5"></i>`,
+    `<a href="https://github.com/Callum-Jones230893/First-webpage-assignment"><i class="fa-brands fa-github"></i></a>`,
+    `<a href="https://vercel.com/callum-jones-projects/first-webpage-assignment/">Vercel</a>`
   ),
   new Project(
     2,
     "JavaScript Game",
-    "img2.png",
+    "./images/prompt-game.png",
     "This assignment was to create a JS text based game, using concepts such as variables, arrays, loops, conditional logic, and nesting.",
     "",
     "Skills developed/improved:",
     ["improvements"],
     "Criteria",
     ["grading"],
-    "technique",
+    `<i class="fa-brands fa-js"></i></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/First-Game-2025"><i class="fa-brands fa-github"></i></a>`,
-    ""
+    `<a href="https://vercel.com/callum-jones-projects/first-game-2025/">Vercel</a>`
   ),
   new Project(
     3,
@@ -106,9 +106,9 @@ const projects = [
       "Single active state logic",
       "Fully responsive layout"
     ],
-    "technique",
+    `<i class="fa-brands fa-js"></i><i class="fa-brands fa-css"></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/Group-zoo-assignment"><i class="fa-brands fa-github"></i></a>`,
-    "https://group-zoo-assignment-frucqach2-callum-jones-projects.vercel.app/"
+    `<a href="https://group-zoo-assignment-frucqach2-callum-jones-projects.vercel.app/">Vercel</a>`
   ),
   new Project(
     4,
@@ -125,9 +125,9 @@ const projects = [
       "Responsive UI",
       "Session-based data tracking"
     ],
-    "technique",
+    `<i class="fa-brands fa-js"></i><i class="fa-brands fa-css"></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/Visualized-game-2025-Nov"><i class="fa-brands fa-github"></i></a>`,
-    "https://visualized-game-2025-mrgwqqt5z-callum-jones-projects.vercel.app/"
+    `<a href="https://visualized-game-2025-mrgwqqt5z-callum-jones-projects.vercel.app/">Vercel</a>`
   ),
   new Project(
     5,
@@ -145,9 +145,9 @@ const projects = [
       "Error handling",
       "localStorage usage"
     ],
-    "technique",
+    `<i class="fa-brands fa-js"></i><i class="fa-brands fa-css"></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/API-group-assignment"><i class="fa-brands fa-github"></i></a>`,
-    `"https://api-group-assignment-qd6cla0w0-callum-jones-projects.vercel.app/`
+    `<a href="https://api-group-assignment-qd6cla0w0-callum-jones-projects.vercel.app/">Vercel</a>`
   ),
 ];
 
@@ -208,9 +208,9 @@ carouselItemContainer.addEventListener("click", (e) => {
   overlay.querySelector(".project-challenges").textContent = project.challenges;
   overlay.querySelector(".project-learning").textContent = project.learning;
   overlay.querySelector(".criteria-toggle").textContent = project.criteriaBtn;
-  overlay.querySelector(".techniques").textContent = project.techniques;
+  overlay.querySelector(".techniques").innerHTML = `${project.techniques}`;
   overlay.querySelector(".git-repo").innerHTML = `${project.gitLink}`;
-  overlay.querySelector(".production-page").innerHTML = project.vercel;
+  overlay.querySelector(".production-page").innerHTML = `${project.vercel}`;
 
   const criteria = overlay.querySelector(".criteria");
   criteria.innerHTML = "";
@@ -304,7 +304,6 @@ const carousel = new Carousel(carouselItems);
 populateRepos();
 carousel.updateCarousel();
 
-// animation api
-// favicon
+// animation api 
 // add multiple breakpoints
 // icons for coding languages
