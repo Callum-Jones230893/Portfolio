@@ -24,6 +24,16 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 4px #ff6ec7, 0 0 8px #a34ed9, 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
 .header {
   background-color: var(--background-primary);
   border-bottom: 1px solid var(--outline);
@@ -349,6 +359,10 @@ p {
   margin-bottom: 5%;
 }
 
+.repo-toggle img {
+  box-shadow: none;
+}
+
 .repo-list {
   max-height: 0;
   opacity: 0;
@@ -378,6 +392,12 @@ p {
 .email {
   color: var(--text-primary);
   text-decoration: none;
+}
+
+.external_contact {
+  color: var(--text-secondary);
+  font-size: 2rem;
+  margin-top: 10px;
 }
 
 .show {
@@ -486,9 +506,16 @@ img {
   }
 }
 
-@media (min-width: 750px) {
+@media (min-width: 750px) and (max-width: 999px) {
 
   .main-body {
     margin-top: 60%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+
+  .main-body {
+    margin-top: 50%;
   }
 }

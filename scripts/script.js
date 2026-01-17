@@ -296,6 +296,12 @@ const populateRepos = async () => {
 const repoToggle = document.querySelector(".repo-toggle");
 
 repoToggle.addEventListener("click", () => {
+  
+  if (showRepos.classList.contains("hidden")) {
+    repoToggle.innerHTML = `My projects <img src="./images/Icons/arrow-up.png" alt="retract arrow" width="20px" height="auto">`
+  } else {
+    repoToggle.innerHTML = `My projects <img src="./images/Icons/arrow-down.png" alt="expand arrow" width="20px" height="auto">`
+  }
   showRepos.classList.toggle("hidden");
 });
 
