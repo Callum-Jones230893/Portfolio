@@ -71,7 +71,12 @@ const projects = [
     "Skills developed/improved:",
     ["Layout of webpages", "Navigational menus"],
     "Criteria",
-    ["grading"],
+    [
+      "Multi-page website built with HTML and CSS",
+      "Fully functional contact form",
+      "Responsive design so that it is functional on both desktop and mobile",
+      "Semantic HTML, with consistent code style"
+    ],
     `<i class="fa-brands fa-css"></i></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/First-webpage-assignment"><i class="fa-brands fa-github"></i></a>`,
     `<a href="https://vercel.com/callum-jones-projects/first-webpage-assignment/">Vercel</a>`
@@ -85,7 +90,14 @@ const projects = [
     "Skills developed/improved:",
     ["improvements"],
     "Criteria",
-    ["grading"],
+    [
+      "Use of varibales, arrays, and loops",
+      "Dynaically collect user input through prompts",
+      "Validation of user input",
+      "Conditional logic where user input determines win or loss",
+      "Nested logic",
+      "Handling of cancel actions and invalid inputs"
+    ],
     `<i class="fa-brands fa-js"></i></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/First-Game-2025"><i class="fa-brands fa-github"></i></a>`,
     `<a href="https://vercel.com/callum-jones-projects/first-game-2025/">Vercel</a>`
