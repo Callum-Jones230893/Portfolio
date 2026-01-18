@@ -219,7 +219,7 @@ carouselItemContainer.addEventListener("click", (e) => {
   overlay.querySelector(".project-bio").textContent = project.bio;
   overlay.querySelector(".project-challenges").textContent = project.challenges;
   overlay.querySelector(".project-learning").textContent = project.learning;
-  overlay.querySelector(".criteria-toggle").innerHTML = `${project.criteriaBtn} <img src="./images/Icons/arrow-down.png" alt="expand arrow" width="20px" height="auto">`;
+  overlay.querySelector(".criteria-toggle").innerHTML = `${project.criteriaBtn} <img class="arrow"src="./images/Icons/arrow-down.png" alt="expand arrow">`;
   overlay.querySelector(".techniques").innerHTML = `${project.techniques}`;
   overlay.querySelector(".git-repo").innerHTML = `${project.gitLink}`;
   overlay.querySelector(".production-page").innerHTML = `${project.vercel}`;
@@ -247,9 +247,9 @@ carouselItemContainer.addEventListener("click", (e) => {
 
 criteriaToggleBtn.addEventListener("click", () => {
     if (criteriaSection.classList.contains("hide")) {
-    criteriaToggleBtn.innerHTML = `Criteria <img src="./images/Icons/arrow-up.png" alt="retract arrow" width="20px" height="auto">`
+    criteriaToggleBtn.innerHTML = `Criteria <img class="arrow" src="./images/Icons/arrow-up.png" alt="retract arrow">`
   } else {
-    criteriaToggleBtn.innerHTML = `Criteria <img src="./images/Icons/arrow-down.png" alt="expand arrow" width="20px" height="auto">`
+    criteriaToggleBtn.innerHTML = `Criteria <img class="arrow" src="./images/Icons/arrow-down.png" alt="expand arrow">`
   }
   criteriaSection.classList.toggle("hide");
 });
@@ -315,9 +315,9 @@ const repoToggle = document.querySelector(".repo-toggle");
 repoToggle.addEventListener("click", () => {
   
   if (showRepos.classList.contains("hidden")) {
-    repoToggle.innerHTML = `My projects <img src="./images/Icons/arrow-up.png" alt="retract arrow" width="20px" height="auto">`
+    repoToggle.innerHTML = `My projects <img class="arrow" src="./images/Icons/arrow-up.png" alt="retract arrow" width="20px" height="auto">`
   } else {
-    repoToggle.innerHTML = `My projects <img src="./images/Icons/arrow-down.png" alt="expand arrow" width="20px" height="auto">`
+    repoToggle.innerHTML = `My projects <img class="arrow" src="./images/Icons/arrow-down.png" alt="expand arrow" width="20px" height="auto">`
   }
   showRepos.classList.toggle("hidden");
 });
