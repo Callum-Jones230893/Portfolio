@@ -88,7 +88,7 @@ const projects = [
     "This assignment was to create a JS text based game, using concepts such as variables, arrays, loops, conditional logic, and nesting.",
     "",
     "Skills developed/improved:",
-    ["improvements"],
+    ["Conditional / Nested logic", "Handling of cancellation"],
     "Criteria",
     [
       "Use of varibales, arrays, and loops",
