@@ -79,7 +79,7 @@ const projects = [
     ],
     `<i class="fa-brands fa-css"></i></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/First-webpage-assignment"><i class="fa-brands fa-github"></i></a>`,
-    `<a href="https://vercel.com/callum-jones-projects/first-webpage-assignment/">Vercel</a>`
+    `<a href="https://first-webpage-assignment.vercel.app/">Vercel</a>`
   ),
   new Project(
     2,
@@ -100,7 +100,7 @@ const projects = [
     ],
     `<i class="fa-brands fa-js"></i></i><i class="fa-brands fa-html5"></i>`,
     `<a href="https://github.com/Callum-Jones230893/First-Game-2025"><i class="fa-brands fa-github"></i></a>`,
-    `<a href="https://vercel.com/callum-jones-projects/first-game-2025/">Vercel</a>`
+    `<a href="https://first-game-2025.vercel.app/">Vercel</a>`
   ),
   new Project(
     3,
