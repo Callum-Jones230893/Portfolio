@@ -6,12 +6,14 @@
   <meta name="description" content="My website for a personal portfolio to showcase my work to date and track future work.">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="./styles/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
   <script src="./scripts/script.js" defer></script>
   <script src="https://kit.fontawesome.com/9590e12a3d.js" crossorigin="anonymous"></script>
   <link rel="icon" href="./images/Icons/favicon.png">
 </head>
 <body>
   <div class="main__wrapper">
+    <canvas id="background_effect" style="position: fixed; inset: 0; z-index: -10; pointer-events: none; opacity: 0.12;"></canvas>
     <header class="header">
       <h1 class="title">Welcome to my Portfolio</h1>
     </header>
@@ -25,7 +27,6 @@
           <img class="carousel-item item-5" src="./images/API_group_assignment.png" alt="Group website fetching databases and API's" data-index="5" width="300" height="430">
         </div>
       </div>
-    <div class="carousel-buttons"></div>
     </div> 
     <div class="project__overlay hide">
       <div class="overlay">
@@ -44,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div class="main-content">
+    <main class="main-content">
       <div class="main-body">
         <h2 class="body__title hidden">Callum Jones</h2>
           <div class="photo__wrapper hidden">
@@ -55,6 +56,10 @@
           <p class="about-text">I pride myself on being a positive, team-oriented professional who is approachable and eager to both learn and share knowledge where possible.</p>
           <p class="about-text">Through roles across several industries, I’ve developed a strong, adaptable skill set, along with clear communication and strong interpersonal skills that help me collaborate effectively with both technical and non-technical teams.</p>
         </div>
+        <article class="skills hidden">
+          <h3 class="current_skills">Tech Skills</h3>
+          <p class="skill_icons"><i class="fa-brands fa-js"></i><i class="fa-brands fa-css"></i><i class="fa-brands fa-html5"></i></p>
+        </article>
         <div class="information">
           <article class="contact hidden">
             <h3>Contact me here :</h3>
@@ -69,7 +74,7 @@
           </article>
       </div>
     </div>
-  </div>
+  </main>
   <footer class="footer">Callum Jones</footer>
 </body>
 </html>

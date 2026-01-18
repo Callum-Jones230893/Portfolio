@@ -207,7 +207,7 @@ carouselItemContainer.addEventListener("click", (e) => {
   overlay.querySelector(".project-bio").textContent = project.bio;
   overlay.querySelector(".project-challenges").textContent = project.challenges;
   overlay.querySelector(".project-learning").textContent = project.learning;
-  overlay.querySelector(".criteria-toggle").textContent = project.criteriaBtn;
+  overlay.querySelector(".criteria-toggle").innerHTML = `${project.criteriaBtn} <img src="./images/Icons/arrow-down.png" alt="expand arrow" width="20px" height="auto">`;
   overlay.querySelector(".techniques").innerHTML = `${project.techniques}`;
   overlay.querySelector(".git-repo").innerHTML = `${project.gitLink}`;
   overlay.querySelector(".production-page").innerHTML = `${project.vercel}`;
@@ -234,6 +234,11 @@ carouselItemContainer.addEventListener("click", (e) => {
 });
 
 criteriaToggleBtn.addEventListener("click", () => {
+    if (criteriaSection.classList.contains("hide")) {
+    criteriaToggleBtn.innerHTML = `Criteria <img src="./images/Icons/arrow-up.png" alt="retract arrow" width="20px" height="auto">`
+  } else {
+    criteriaToggleBtn.innerHTML = `Criteria <img src="./images/Icons/arrow-down.png" alt="expand arrow" width="20px" height="auto">`
+  }
   criteriaSection.classList.toggle("hide");
 });
 
@@ -310,4 +315,64 @@ const carousel = new Carousel(carouselItems);
 populateRepos();
 carousel.updateCarousel();
 
-// animation api 
+const canvas = document.getElementById(`background_effect`);
+const draw = canvas.getContext(`2d`);
+const fontSize = 12;
+let falling = new Array(Math.floor(canvas.width / fontSize)).fill(1);
+
+function canvasDimensions() {
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  const columns = Math.floor(canvas.width / fontSize);
+  falling = new Array(columns).fill(1);
+}
+
+canvasDimensions();
+window.addEventListener(`resize`, canvasDimensions);
+
+const fallingCharacters = [
+  `ア`, `イ` ,`ウ`, `エ`, `オ`, `カ`, `キ`,
+  `ク`, `ケ` ,`コ`, `サ`, `シ`, `ス`, `セ`,
+  `ソ`, `タ`, `チ`, `ツ`, `テ`, `ト` ,`ナ`,
+  `ニ`, `ヌ`, `ネ`, `ノ`, `ハ`, `ヒ`, `フ`,
+  `ヘ`, `ホ`, `マ`, `ミ`, `ム`, `メ`, `モ`,
+  `ヤ`, `ユ`, `ヨ`, `ラ`, `リ`, `ル`, `レ`,
+  `ロ`, `ワ`, `ヲ`, `ン`
+];
+
+function fill() {
+  draw.fillStyle = `rgba(10, 17, 29, 0.06)`;
+  draw.fillRect(0, 0, canvas.width, canvas.height);
+  draw.font = `${fontSize}px Audiowide-regular, monospace`
+  draw.fillStyle = `#38bdf840`;
+
+  for (let j = 0; j < falling.length; j++) {
+    const y = falling[j];
+
+    const character = fallingCharacters[Math.floor(Math.random() * fallingCharacters.length)];
+
+    const x = j * fontSize;
+    const currentY = y * fontSize;
+
+    draw.fillText(character, x, currentY);
+
+    if (currentY > canvas.height && Math.random() > 0.9) {
+        falling[j] = 0;
+    }
+
+    falling[j] += 0.4 + Math.random() * 0.3;
+  }
+};
+
+const interval = setInterval(fill, 80 + Math.random() * 40);
+
+if (typeof anime !== 'undefined') {
+  anime({
+    targets: canvas,
+    opacity: [0.12, 0.09, 0.16, 0.11],
+    duration: 5000,
+    direction: 'alternate',
+    loop: true,
+    easing: 'easeInOutSine',
+  });
+}

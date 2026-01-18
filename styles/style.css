@@ -136,6 +136,11 @@ p {
   z-index: 2;
 }
 
+.item-3:hover {
+  height: 320px;
+  width: 450px;
+}
+
 .item-4 {
   left: 70%;
   transform: translateX(-50%);
@@ -212,7 +217,9 @@ p {
 .criteria-toggle {
   color: var(--accent-primary);
   cursor: pointer;
+  display: inline-flex;
   font-size: 1.5rem;
+  gap: 8px;
   position: relative;
   text-shadow: 0 0 4px var(--accent-primary);
   transition: 0.3s;
@@ -326,6 +333,16 @@ p {
   transition-delay: 0.4s;
 }
 
+.current_skills {
+  text-align: center;
+}
+
+.skill_icons {
+  color: var(--text-secondary);
+  font-size: 48px;
+  text-align: center;
+}
+
 /* Git API section */
 
 .git_repos h3 {
@@ -416,6 +433,12 @@ img {
     0 0 6px rgba(80, 200, 255, 0.3),
     0 0 12px rgba(120, 90, 255, 0.2);
   transition: all 0.3s ease-in-out;
+}
+
+.criteria-toggle img {
+  box-shadow: none;
+  height: 20px;
+  width: auto;
 }
 
 /* Footer */
